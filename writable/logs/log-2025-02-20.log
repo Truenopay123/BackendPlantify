@@ -1,0 +1,946 @@
+ERROR - 2025-02-20 06:43:57 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido.  in C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\xampp\\htdocs...', 201)
+#1 C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql105.infinity...', 'if0_38348285', Object(SensitiveParameterValue), 'usuarios', 3306, '', 0)
+#2 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\backendPlantify\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 C:\xampp\htdocs\backendPlantify\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\xampp\htdocs\backendPlantify\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#7 C:\xampp\htdocs\backendPlantify\app\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+#8 C:\xampp\htdocs\backendPlantify\app\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+#9 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+#10 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+#11 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\backendPlantify\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\backendPlantify\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\backendPlantify\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 {main}
+
+Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido.  in C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql105.infinity...', 'if0_38348285', Object(SensitiveParameterValue), 'usuarios', 3306, '', 0)
+#1 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\backendPlantify\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\backendPlantify\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\backendPlantify\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\backendPlantify\app\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\backendPlantify\app\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+#8 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+#9 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+#10 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\backendPlantify\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\backendPlantify\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\backendPlantify\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido.  in C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\backendPlantify\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\backendPlantify\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\backendPlantify\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\xampp\htdocs\backendPlantify\app\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+#6 C:\xampp\htdocs\backendPlantify\app\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+#7 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+#8 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+#9 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\backendPlantify\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\backendPlantify\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\backendPlantify\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-20 06:43:57 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido. 
+[Method: GET, Route: usuarios]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuario`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+ 6 APPPATH\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-20 06:44:04 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido.  in C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\xampp\\htdocs...', 201)
+#1 C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql105.infinity...', 'if0_38348285', Object(SensitiveParameterValue), 'usuarios', 3306, '', 0)
+#2 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\backendPlantify\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 C:\xampp\htdocs\backendPlantify\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\xampp\htdocs\backendPlantify\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#7 C:\xampp\htdocs\backendPlantify\app\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+#8 C:\xampp\htdocs\backendPlantify\app\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+#9 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+#10 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+#11 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\backendPlantify\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\backendPlantify\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\backendPlantify\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 {main}
+
+Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido.  in C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql105.infinity...', 'if0_38348285', Object(SensitiveParameterValue), 'usuarios', 3306, '', 0)
+#1 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\backendPlantify\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\backendPlantify\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\backendPlantify\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\backendPlantify\app\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\backendPlantify\app\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+#8 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+#9 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+#10 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\backendPlantify\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\backendPlantify\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\backendPlantify\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido.  in C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\backendPlantify\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\backendPlantify\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\backendPlantify\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\xampp\htdocs\backendPlantify\app\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+#6 C:\xampp\htdocs\backendPlantify\app\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+#7 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+#8 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+#9 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\backendPlantify\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\backendPlantify\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\backendPlantify\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-20 06:44:04 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido. 
+[Method: GET, Route: usuarios]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuario`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+ 6 APPPATH\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-20 06:44:09 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido.  in C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\xampp\\htdocs...', 201)
+#1 C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql105.infinity...', 'if0_38348285', Object(SensitiveParameterValue), 'usuarios', 3306, '', 0)
+#2 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\backendPlantify\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 C:\xampp\htdocs\backendPlantify\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\xampp\htdocs\backendPlantify\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#7 C:\xampp\htdocs\backendPlantify\app\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+#8 C:\xampp\htdocs\backendPlantify\app\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+#9 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+#10 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+#11 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\backendPlantify\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\backendPlantify\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\backendPlantify\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 {main}
+
+Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido.  in C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql105.infinity...', 'if0_38348285', Object(SensitiveParameterValue), 'usuarios', 3306, '', 0)
+#1 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\backendPlantify\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\backendPlantify\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\backendPlantify\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\backendPlantify\app\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\backendPlantify\app\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+#8 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+#9 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+#10 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\backendPlantify\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\backendPlantify\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\backendPlantify\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido.  in C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\backendPlantify\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\backendPlantify\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\backendPlantify\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\xampp\htdocs\backendPlantify\app\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+#6 C:\xampp\htdocs\backendPlantify\app\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+#7 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+#8 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+#9 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\backendPlantify\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\backendPlantify\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\backendPlantify\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-20 06:44:09 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido. 
+[Method: GET, Route: usuarios]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuario`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+ 6 APPPATH\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-20 06:47:12 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido.  in C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\xampp\\htdocs...', 201)
+#1 C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql105.infinity...', 'if0_38348285', Object(SensitiveParameterValue), 'if0_38348285_pr...', 3306, '', 0)
+#2 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\backendPlantify\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 C:\xampp\htdocs\backendPlantify\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\xampp\htdocs\backendPlantify\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#7 C:\xampp\htdocs\backendPlantify\app\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+#8 C:\xampp\htdocs\backendPlantify\app\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+#9 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+#10 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+#11 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\backendPlantify\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\backendPlantify\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\backendPlantify\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 {main}
+
+Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido.  in C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql105.infinity...', 'if0_38348285', Object(SensitiveParameterValue), 'if0_38348285_pr...', 3306, '', 0)
+#1 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\backendPlantify\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\backendPlantify\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\backendPlantify\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\backendPlantify\app\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\backendPlantify\app\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+#8 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+#9 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+#10 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\backendPlantify\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\backendPlantify\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\backendPlantify\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido.  in C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\backendPlantify\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\backendPlantify\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\backendPlantify\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\xampp\htdocs\backendPlantify\app\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+#6 C:\xampp\htdocs\backendPlantify\app\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+#7 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+#8 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+#9 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\backendPlantify\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\backendPlantify\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\backendPlantify\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-20 06:47:12 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido. 
+[Method: GET, Route: usuarios]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuarios`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+ 6 APPPATH\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-20 06:49:33 --> Error connecting to the database: mysqli_sql_exception: Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder in C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql105.byetclus...', 'if0_38348285', Object(SensitiveParameterValue), 'if0_38348285_pr...', 3306, '', 0)
+#1 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\backendPlantify\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\backendPlantify\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\backendPlantify\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\backendPlantify\app\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\backendPlantify\app\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+#8 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+#9 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+#10 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\backendPlantify\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\backendPlantify\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\backendPlantify\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder in C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\backendPlantify\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\backendPlantify\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\backendPlantify\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\xampp\htdocs\backendPlantify\app\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+#6 C:\xampp\htdocs\backendPlantify\app\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+#7 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+#8 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+#9 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\backendPlantify\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\backendPlantify\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\backendPlantify\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-20 06:49:33 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder
+[Method: GET, Route: usuarios]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuarios`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+ 6 APPPATH\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-20 06:49:41 --> Error connecting to the database: mysqli_sql_exception: Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder in C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql105.byetclus...', 'if0_38348285', Object(SensitiveParameterValue), 'if0_38348285_pr...', 3306, '', 0)
+#1 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\backendPlantify\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\backendPlantify\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\backendPlantify\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\backendPlantify\app\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\backendPlantify\app\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+#8 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+#9 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+#10 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\backendPlantify\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\backendPlantify\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\backendPlantify\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder in C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\backendPlantify\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\backendPlantify\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\backendPlantify\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\xampp\htdocs\backendPlantify\app\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+#6 C:\xampp\htdocs\backendPlantify\app\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+#7 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+#8 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+#9 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\backendPlantify\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\backendPlantify\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\backendPlantify\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-20 06:49:41 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder
+[Method: GET, Route: usuarios]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuarios`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+ 6 APPPATH\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-20 06:49:51 --> Error connecting to the database: mysqli_sql_exception: Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder in C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql105.byetclus...', 'if0_38348285', Object(SensitiveParameterValue), 'if0_38348285_pr...', 3306, '', 0)
+#1 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\backendPlantify\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\backendPlantify\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\backendPlantify\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\backendPlantify\app\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\backendPlantify\app\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+#8 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+#9 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+#10 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\backendPlantify\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\backendPlantify\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\backendPlantify\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder in C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\backendPlantify\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\backendPlantify\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\backendPlantify\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\xampp\htdocs\backendPlantify\app\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+#6 C:\xampp\htdocs\backendPlantify\app\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+#7 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+#8 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+#9 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\backendPlantify\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\backendPlantify\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\backendPlantify\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-20 06:49:51 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder
+[Method: GET, Route: usuarios]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuarios`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+ 6 APPPATH\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-20 06:54:43 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido.  in C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\xampp\\htdocs...', 201)
+#1 C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql105.infinity...', 'if0_38348285', Object(SensitiveParameterValue), 'if0_38348285_pr...', 3306, '', 0)
+#2 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\backendPlantify\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 C:\xampp\htdocs\backendPlantify\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\xampp\htdocs\backendPlantify\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#7 C:\xampp\htdocs\backendPlantify\app\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+#8 C:\xampp\htdocs\backendPlantify\app\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+#9 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+#10 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+#11 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\backendPlantify\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\backendPlantify\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\backendPlantify\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 {main}
+
+Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido.  in C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql105.infinity...', 'if0_38348285', Object(SensitiveParameterValue), 'if0_38348285_pr...', 3306, '', 0)
+#1 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\backendPlantify\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\backendPlantify\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\backendPlantify\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\backendPlantify\app\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\backendPlantify\app\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+#8 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+#9 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+#10 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\backendPlantify\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\backendPlantify\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\backendPlantify\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido.  in C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\backendPlantify\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\backendPlantify\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\backendPlantify\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\xampp\htdocs\backendPlantify\app\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+#6 C:\xampp\htdocs\backendPlantify\app\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+#7 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+#8 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+#9 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\backendPlantify\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\backendPlantify\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\backendPlantify\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-20 06:54:43 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido. 
+[Method: GET, Route: usuarios]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuarios`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+ 6 APPPATH\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-20 06:55:51 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido.  in C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\xampp\\htdocs...', 201)
+#1 C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql105.infinity...', 'if0_38348285', Object(SensitiveParameterValue), 'if0_38348285_pr...', 3306, '', 0)
+#2 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\backendPlantify\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 C:\xampp\htdocs\backendPlantify\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\xampp\htdocs\backendPlantify\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#7 C:\xampp\htdocs\backendPlantify\app\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+#8 C:\xampp\htdocs\backendPlantify\app\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+#9 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+#10 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+#11 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\backendPlantify\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\backendPlantify\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\backendPlantify\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 {main}
+
+Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido.  in C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql105.infinity...', 'if0_38348285', Object(SensitiveParameterValue), 'if0_38348285_pr...', 3306, '', 0)
+#1 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\backendPlantify\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\backendPlantify\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\backendPlantify\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\backendPlantify\app\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\backendPlantify\app\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+#8 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+#9 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+#10 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\backendPlantify\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\backendPlantify\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\backendPlantify\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido.  in C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\backendPlantify\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\backendPlantify\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\backendPlantify\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\xampp\htdocs\backendPlantify\app\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+#6 C:\xampp\htdocs\backendPlantify\app\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+#7 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+#8 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+#9 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\backendPlantify\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\backendPlantify\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\backendPlantify\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-20 06:55:51 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido. 
+[Method: GET, Route: usuarios]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuarios`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+ 6 APPPATH\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-20 06:56:10 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido.  in C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\xampp\\htdocs...', 201)
+#1 C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql105.infinity...', 'if0_38348285', Object(SensitiveParameterValue), 'if0_38348285_pr...', 3306, '', 0)
+#2 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\backendPlantify\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 C:\xampp\htdocs\backendPlantify\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\xampp\htdocs\backendPlantify\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#7 C:\xampp\htdocs\backendPlantify\app\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+#8 C:\xampp\htdocs\backendPlantify\app\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+#9 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+#10 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+#11 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\backendPlantify\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\backendPlantify\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\backendPlantify\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 {main}
+
+Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido.  in C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql105.infinity...', 'if0_38348285', Object(SensitiveParameterValue), 'if0_38348285_pr...', 3306, '', 0)
+#1 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\backendPlantify\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\backendPlantify\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\backendPlantify\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\backendPlantify\app\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\backendPlantify\app\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+#8 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+#9 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+#10 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\backendPlantify\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\backendPlantify\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\backendPlantify\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido.  in C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\backendPlantify\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\backendPlantify\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\backendPlantify\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\xampp\htdocs\backendPlantify\app\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+#6 C:\xampp\htdocs\backendPlantify\app\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+#7 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+#8 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+#9 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\backendPlantify\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\backendPlantify\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\backendPlantify\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-20 06:56:10 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido. 
+[Method: GET, Route: usuarios]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuarios`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+ 6 APPPATH\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-20 06:56:13 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido.  in C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\xampp\\htdocs...', 201)
+#1 C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql105.infinity...', 'if0_38348285', Object(SensitiveParameterValue), 'if0_38348285_pr...', 3306, '', 0)
+#2 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\backendPlantify\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 C:\xampp\htdocs\backendPlantify\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\xampp\htdocs\backendPlantify\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#7 C:\xampp\htdocs\backendPlantify\app\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+#8 C:\xampp\htdocs\backendPlantify\app\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+#9 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+#10 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+#11 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\backendPlantify\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\backendPlantify\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\backendPlantify\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 {main}
+
+Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido.  in C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql105.infinity...', 'if0_38348285', Object(SensitiveParameterValue), 'if0_38348285_pr...', 3306, '', 0)
+#1 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\backendPlantify\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\backendPlantify\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\backendPlantify\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\backendPlantify\app\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\backendPlantify\app\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+#8 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+#9 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+#10 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\backendPlantify\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\backendPlantify\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\backendPlantify\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido.  in C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\backendPlantify\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\backendPlantify\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\backendPlantify\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\xampp\htdocs\backendPlantify\app\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+#6 C:\xampp\htdocs\backendPlantify\app\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+#7 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+#8 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+#9 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\backendPlantify\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\backendPlantify\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\backendPlantify\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-20 06:56:13 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido. 
+[Method: GET, Route: usuarios]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuarios`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+ 6 APPPATH\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-20 06:56:34 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido.  in C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\xampp\\htdocs...', 201)
+#1 C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql105.infinity...', 'if0_38348285', Object(SensitiveParameterValue), 'if0_38348285_pr...', 3306, '', 0)
+#2 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\backendPlantify\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 C:\xampp\htdocs\backendPlantify\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\xampp\htdocs\backendPlantify\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#7 C:\xampp\htdocs\backendPlantify\app\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+#8 C:\xampp\htdocs\backendPlantify\app\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+#9 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+#10 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+#11 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\backendPlantify\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\backendPlantify\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\backendPlantify\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 {main}
+
+Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido.  in C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql105.infinity...', 'if0_38348285', Object(SensitiveParameterValue), 'if0_38348285_pr...', 3306, '', 0)
+#1 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\backendPlantify\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\backendPlantify\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\backendPlantify\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\backendPlantify\app\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\backendPlantify\app\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+#8 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+#9 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+#10 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\backendPlantify\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\backendPlantify\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\backendPlantify\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido.  in C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\backendPlantify\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\backendPlantify\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\backendPlantify\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\xampp\htdocs\backendPlantify\app\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+#6 C:\xampp\htdocs\backendPlantify\app\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+#7 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+#8 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+#9 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\backendPlantify\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\backendPlantify\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\backendPlantify\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-20 06:56:34 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido. 
+[Method: GET, Route: usuarios]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuarios`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+ 6 APPPATH\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-20 06:57:44 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido.  in C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\xampp\\htdocs...', 201)
+#1 C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql105.infinity...', 'if0_38348285', Object(SensitiveParameterValue), 'if0_38348285_pr...', 3306, '', 0)
+#2 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\backendPlantify\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 C:\xampp\htdocs\backendPlantify\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\xampp\htdocs\backendPlantify\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#7 C:\xampp\htdocs\backendPlantify\app\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+#8 C:\xampp\htdocs\backendPlantify\app\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+#9 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+#10 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+#11 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\backendPlantify\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\backendPlantify\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\backendPlantify\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 {main}
+
+Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido.  in C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql105.infinity...', 'if0_38348285', Object(SensitiveParameterValue), 'if0_38348285_pr...', 3306, '', 0)
+#1 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\backendPlantify\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\backendPlantify\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\backendPlantify\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\backendPlantify\app\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\backendPlantify\app\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+#8 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+#9 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+#10 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\backendPlantify\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\backendPlantify\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\backendPlantify\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido.  in C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\backendPlantify\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\backendPlantify\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\backendPlantify\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\xampp\htdocs\backendPlantify\app\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+#6 C:\xampp\htdocs\backendPlantify\app\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+#7 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+#8 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+#9 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\backendPlantify\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\backendPlantify\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\backendPlantify\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-20 06:57:44 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido. 
+[Method: GET, Route: usuarios]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuarios`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+ 6 APPPATH\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-20 07:00:02 --> Error connecting to the database: mysqli_sql_exception: Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder in C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql105.byetclus...', 'if0_38348285', Object(SensitiveParameterValue), 'if0_38348285_pr...', 3306, '', 0)
+#1 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\backendPlantify\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\backendPlantify\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\backendPlantify\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\backendPlantify\app\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\backendPlantify\app\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+#8 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+#9 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+#10 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\backendPlantify\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\backendPlantify\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\backendPlantify\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder in C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\backendPlantify\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\backendPlantify\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\backendPlantify\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\xampp\htdocs\backendPlantify\app\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+#6 C:\xampp\htdocs\backendPlantify\app\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+#7 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+#8 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+#9 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\backendPlantify\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\backendPlantify\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\backendPlantify\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-20 07:00:02 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder
+[Method: GET, Route: usuarios]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuarios`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Models\usuarioModel.php(16): CodeIgniter\BaseModel->findAll()
+ 6 APPPATH\Controllers\usuarioController.php(13): App\Models\UsuarioModel->obtenerUsuarios()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-20 07:02:47 --> mysqli_sql_exception: Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder
+[Method: GET, Route: usuarios]
+in APPPATH\Controllers\usuarioController.php on line 8.
+ 1 APPPATH\Controllers\usuarioController.php(8): mysqli->__construct('sql105.byetcluster.com', 'if0_38348285', Object(SensitiveParameterValue), 'if0_38348285_prueba')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(316): include_once('C:\\xampp\\htdocs\\backendPlantify\\app\\Controllers\\usuarioController.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\backendPlantify\\app\\Controllers\\UsuarioController.php')
+ 4 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\UsuarioController')
+ 5 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\UsuarioController')
+ 6 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\UsuarioController', true)
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-20 07:03:17 --> mysqli_sql_exception: php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido. 
+[Method: GET, Route: usuarios]
+in APPPATH\Controllers\usuarioController.php on line 8.
+ 1 APPPATH\Controllers\usuarioController.php(8): mysqli->__construct('sql105.infinityfree.com', 'if0_38348285', Object(SensitiveParameterValue), 'if0_38348285_prueba')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(316): include_once('C:\\xampp\\htdocs\\backendPlantify\\app\\Controllers\\usuarioController.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\backendPlantify\\app\\Controllers\\UsuarioController.php')
+ 4 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\UsuarioController')
+ 5 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\UsuarioController')
+ 6 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\UsuarioController', true)
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-20 07:03:17 --> [Caused by] ErrorException: mysqli::__construct(): php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido. 
+in APPPATH\Controllers\usuarioController.php on line 8.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::__construct(): php_network_getaddresses: getaddrinfo for sql105.infinityfree.com failed: Host desconocido. ', 'C:\\xampp\\htdocs\\backendPlantify\\app\\Controllers\\usuarioController.php', 8)
+ 2 APPPATH\Controllers\usuarioController.php(8): mysqli->__construct('sql105.infinityfree.com', 'if0_38348285', Object(SensitiveParameterValue), 'if0_38348285_prueba')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(316): include_once('C:\\xampp\\htdocs\\backendPlantify\\app\\Controllers\\usuarioController.php')
+ 4 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\backendPlantify\\app\\Controllers\\UsuarioController.php')
+ 5 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\UsuarioController')
+ 6 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\UsuarioController')
+ 7 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\UsuarioController', true)
+ 8 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
