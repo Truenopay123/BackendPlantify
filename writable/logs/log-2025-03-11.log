@@ -1,0 +1,24 @@
+CRITICAL - 2025-03-11 07:18:13 --> ErrorException: Type of Config\Filters::$methods must be array (as in class CodeIgniter\Config\Filters)
+[Method: OPTIONS, Route: login]
+in APPPATH\Config\Filters.php on line 19.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-03-11 07:20:07 --> ErrorException: Type of Config\Filters::$methods must be array (as in class CodeIgniter\Config\Filters)
+[Method: OPTIONS, Route: login]
+in APPPATH\Config\Filters.php on line 19.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-03-11 07:47:02 --> ErrorException: Type of Config\Filters::$methods must be array (as in class CodeIgniter\Config\Filters)
+[Method: OPTIONS, Route: login]
+in APPPATH\Config\Filters.php on line 19.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-03-11 07:49:02 --> ErrorException: Type of Config\Filters::$methods must be array (as in class CodeIgniter\Config\Filters)
+[Method: OPTIONS, Route: login]
+in APPPATH\Config\Filters.php on line 19.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-03-11 07:54:52 --> ErrorException: Type of Config\Filters::$methods must be array (as in class CodeIgniter\Config\Filters)
+[Method: OPTIONS, Route: login/]
+in APPPATH\Config\Filters.php on line 19.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-03-11 07:56:32 --> ErrorException: Type of Config\Filters::$methods must be array (as in class CodeIgniter\Config\Filters)
+[Method: GET, Route: login]
+in APPPATH\Config\Filters.php on line 19.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()

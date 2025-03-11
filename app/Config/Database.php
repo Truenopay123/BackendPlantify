@@ -26,10 +26,14 @@ class Database extends Config
      */
     public array $default = [
         'DSN'          => '',
-        'hostname'     => 'sql211.infinityfree.com',
-        'username'     => 'if0_38357851',
-        'password'     => 'DAdQ2UJYcF',
-        'database'     => 'if0_38357851_usuarios',
+        'hostname'     => 'jamadev.com',
+        'username'     => 'admin',
+        'password'     => 'x2o5?88Wx',
+        'database'     => 'admin_plantify',
+        /*'hostname'     => 'localhost',
+        'username'     => 'root',
+        'password'     => 'Perfect97',
+        'database'     => 'admin_plantify',*/
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
         'pConnect'     => false,

@@ -17,7 +17,7 @@ class App extends BaseConfig
      * E.g., http://example.com/
      */
 
-    public string $baseURL = 'http://www.plantify.ct.ws/';
+    public string $baseURL = 'https://plantify.jamadev.com/';
 
     /**
      * Allowed Hostnames in the Site URL other than the hostname in the baseURL.
