@@ -7,56 +7,250 @@ use CodeIgniter\RESTful\ResourceController;
 
 class UsuariosController extends ResourceController
 {
-    // Habilitar CORS correctamente
+    protected $modelName = 'App\Models\UsuariosModel';
+    protected $format = 'json';
+
+    // Habilitar CORS
     public function options()
     {
         return $this->response
             ->setHeader('Access-Control-Allow-Origin', '*')
-            ->setHeader('Access-Control-Allow-Methods', 'GET, POST, DELETE, OPTIONS')
+            ->setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
             ->setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization')
             ->setStatusCode(200);
     }
 
-    // Procesa el login del usuario (POST)
+    // Obtener todos los usuarios (GET /usuarios)
+    public function index()
+    {
+        try {
+            $usuariosModel = new UsuariosModel();
+            $usuarios = $usuariosModel->select('id_usuario, tipo, nombre, apellido, correo, telefono, estatus')
+                ->findAll();
+
+            if (empty($usuarios)) {
+                return $this->respond([
+                    'status' => 'success',
+                    'message' => 'No hay usuarios registrados',
+                    'data' => []
+                ], 200);
+            }
+
+            $usuariosFormateados = array_map(function ($usuario) {
+                return [
+                    'id_usuario' => $usuario['id_usuario'],
+                    'tipo' => $usuario['tipo'] === 'admin' ? 1 : 0,
+                    'nombre' => $usuario['nombre'],
+                    'apellido' => $usuario['apellido'],
+                    'correo' => $usuario['correo'],
+                    'telefono' => $usuario['telefono'],
+                    'estatus' => (int) $usuario['estatus']
+                ];
+            }, $usuarios);
+
+            return $this->respond([
+                'status' => 'success',
+                'message' => 'Usuarios obtenidos exitosamente',
+                'data' => $usuariosFormateados
+            ], 200);
+        } catch (\Exception $e) {
+            return $this->respond([
+                'status' => 'error',
+                'message' => 'Error al obtener los usuarios: ' . $e->getMessage()
+            ], 500);
+        }
+    }
+
+    // Agregar un nuevo usuario (POST /usuarios)
+    public function create()
+    {
+        try {
+            $json = $this->request->getJSON();
+            if (
+                !$json ||
+                !isset($json->nombre) ||
+                !isset($json->apellido) ||
+                !isset($json->correo) ||
+                !isset($json->telefono) ||
+                !isset($json->contraseña)
+            ) {
+                return $this->respond(['status' => 'error', 'message' => 'Faltan datos requeridos'], 400);
+            }
+
+            $hashedPassword = password_hash($json->contraseña, PASSWORD_DEFAULT);
+
+            $data = [
+                'tipo' => ($json->tipo === 1 || $json->tipo === "1") ? 'admin' : 'operador',
+                'nombre' => $json->nombre,
+                'apellido' => $json->apellido,
+                'correo' => $json->correo,
+                'telefono' => $json->telefono,
+                'contraseña' => $hashedPassword,
+                'estatus' => isset($json->estatus) ? (int) $json->estatus : 1
+            ];
+
+            $usuariosModel = new UsuariosModel();
+            $id = $usuariosModel->insert($data);
+
+            if ($id === false) {
+                return $this->respond(['status' => 'error', 'message' => 'Error al agregar el usuario: ' . implode(', ', $usuariosModel->errors())], 400);
+            }
+
+            $nuevoUsuario = $usuariosModel->find($id);
+            $usuarioFormateado = [
+                'id_usuario' => $nuevoUsuario['id_usuario'],
+                'tipo' => $nuevoUsuario['tipo'] === 'admin' ? 1 : 0,
+                'nombre' => $nuevoUsuario['nombre'],
+                'apellido' => $nuevoUsuario['apellido'],
+                'correo' => $nuevoUsuario['correo'],
+                'telefono' => $nuevoUsuario['telefono'],
+                'estatus' => (int) $nuevoUsuario['estatus']
+            ];
+
+            return $this->respond(['status' => 'success', 'message' => 'Usuario agregado exitosamente.', 'data' => $usuarioFormateado], 201);
+        } catch (\Exception $e) {
+            return $this->respond(['status' => 'error', 'message' => 'Error al agregar el usuario: ' . $e->getMessage()], 500);
+        }
+    }
+
+    // Modificar un usuario existente (PUT /usuarios/{id})
+    public function update($id = null)
+    {
+        try {
+            if ($id === null) {
+                return $this->respond([
+                    'status' => 'error',
+                    'message' => 'ID de usuario no proporcionado'
+                ], 400);
+            }
+
+            $json = $this->request->getJSON();
+            if (!$json || !isset($json->nombre) || !isset($json->apellido) || !isset($json->correo) || !isset($json->telefono)) {
+                return $this->respond([
+                    'status' => 'error',
+                    'message' => 'Faltan datos requeridos'
+                ], 400);
+            }
+
+            $usuariosModel = new UsuariosModel();
+            $usuario = $usuariosModel->find($id);
+
+            if (!$usuario) {
+                return $this->respond([
+                    'status' => 'error',
+                    'message' => 'Usuario no encontrado'
+                ], 404);
+            }
+
+            $data = [
+                'tipo' => isset($json->tipo) && $json->tipo === 1 ? 'admin' : 'operador',
+                'nombre' => $json->nombre,
+                'apellido' => $json->apellido,
+                'correo' => $json->correo,
+                'telefono' => $json->telefono,
+                'estatus' => isset($json->estatus) ? (int) $json->estatus : (int) $usuario['estatus']
+            ];
+
+            $updated = $usuariosModel->update($id, $data);
+
+            if ($updated === false) {
+                return $this->respond([
+                    'status' => 'error',
+                    'message' => 'Error al actualizar el usuario: ' . implode(', ', $usuariosModel->errors())
+                ], 400);
+            }
+
+            $usuarioActualizado = $usuariosModel->find($id);
+            $usuarioFormateado = [
+                'id_usuario' => $usuarioActualizado['id_usuario'],
+                'tipo' => $usuarioActualizado['tipo'] === 'admin' ? 1 : 0,
+                'nombre' => $usuarioActualizado['nombre'],
+                'apellido' => $usuarioActualizado['apellido'],
+                'correo' => $usuarioActualizado['correo'],
+                'telefono' => $usuarioActualizado['telefono'],
+                'estatus' => (int) $usuarioActualizado['estatus']
+            ];
+
+            return $this->respond([
+                'status' => 'success',
+                'message' => 'Usuario actualizado exitosamente',
+                'data' => $usuarioFormateado
+            ], 200);
+        } catch (\Exception $e) {
+            return $this->respond([
+                'status' => 'error',
+                'message' => 'Error al actualizar el usuario: ' . $e->getMessage()
+            ], 500);
+        }
+    }
+
+    // Procesa el login del usuario (POST /login)
     public function procesarLogin()
-    {        
-        // Obtener datos desde JSON (POST)
+    {
         $json = $this->request->getJSON();
         if (!$json || !isset($json->correo) || !isset($json->password)) {
-            return $this->response->setJSON([
-                'status' => 'error',
-                'message' => 'Faltan datos'
-            ])->setStatusCode(400);
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Faltan datos'])->setStatusCode(400);
         }
 
         $correo = $json->correo;
         $password = $json->password;
 
-        $UsuariosModel = new UsuariosModel();
-        $usuario = $UsuariosModel->where('correo', $correo)->first();
+        $usuariosModel = new UsuariosModel();
+        $usuario = $usuariosModel->where('correo', $correo)->first();
 
-        if ($usuario && $password === $usuario['contraseña']) {
-            return $this->response->setJSON([
-                'status' => 'success',
-                'message' => 'Inicio de sesión exitoso',
-                'usuario' => [
-                    'id' => $usuario['id_usuario'],
-                    'nombre' => $usuario['nombre'],
-                    'correo' => $usuario['correo'],
-                ]
-            ]);
-        } else {
+        if (!$usuario || !password_verify($password, $usuario['contraseña'])) {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Correo o contraseña incorrectos'])->setStatusCode(401);
+        }
+
+        // Verificar si ya hay una sesión activa
+        // Usamos isset para evitar el error si session_token no está definido
+        if (isset($usuario['session_token']) && $usuario['session_token'] !== null) {
             return $this->response->setJSON([
                 'status' => 'error',
-                'message' => 'Correo o contraseña incorrectos'
-            ])->setStatusCode(401);
+                'message' => 'Ya existe una sesión activa para este usuario en otro dispositivo.'
+            ])->setStatusCode(403);
         }
+
+        // Generar un token único para la sesión
+        $sessionToken = bin2hex(random_bytes(16)); // Token de 32 caracteres
+        $usuariosModel->update($usuario['id_usuario'], ['session_token' => $sessionToken]);
+
+        // Devolver datos del usuario con el token
+        return $this->response->setJSON([
+            'status' => 'success',
+            'message' => 'Inicio de sesión exitoso',
+            'usuario' => [
+                'id' => $usuario['id_usuario'],
+                'nombre' => $usuario['nombre'],
+                'correo' => $usuario['correo'],
+                'tipo' => $usuario['tipo'] === 'admin' ? 1 : 0,
+                'session_token' => $sessionToken
+            ]
+        ]);
     }
 
-    // Método para cerrar sesión
+    // Cerrar sesión (POST /logout)
     public function logout()
     {
-        session()->destroy();
-        return $this->respond(['message' => 'Sesión cerrada exitosamente']);
+        $json = $this->request->getJSON();
+        if (!$json || !isset($json->id_usuario) || !isset($json->session_token)) {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Faltan datos'])->setStatusCode(400);
+        }
+
+        $id_usuario = $json->id_usuario;
+        $session_token = $json->session_token;
+
+        $usuariosModel = new UsuariosModel();
+        $usuario = $usuariosModel->where('id_usuario', $id_usuario)
+                                 ->where('session_token', $session_token)
+                                 ->first();
+
+        if (!$usuario) {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Sesión inválida'])->setStatusCode(401);
+        }
+
+        // Limpiar el session_token
+        $usuariosModel->update($id_usuario, ['session_token' => null]);
+        return $this->response->setJSON(['status' => 'success', 'message' => 'Sesión cerrada exitosamente']);
     }
 }

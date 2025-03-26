@@ -26,14 +26,18 @@ class Database extends Config
      */
     public array $default = [
         'DSN'          => '',
+        
         'hostname'     => 'jamadev.com',
         'username'     => 'admin',
         'password'     => 'x2o5?88Wx',
         'database'     => 'admin_plantify',
-        /*'hostname'     => 'localhost',
+        
+        /*
+        'hostname'     => 'localhost',
         'username'     => 'root',
         'password'     => 'Perfect97',
-        'database'     => 'admin_plantify',*/
+        'database'     => 'admin_plantify',
+        */
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
         'pConnect'     => false,

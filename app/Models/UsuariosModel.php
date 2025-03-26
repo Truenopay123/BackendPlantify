@@ -6,22 +6,26 @@ use CodeIgniter\Model;
 
 class UsuariosModel extends Model
 {
-    // Especificamos la tabla de la base de datos
     protected $table      = 'usuarios';
     protected $primaryKey = 'id_usuario';
 
     // Campos que son asignables
-    protected $allowedFields = ['tipo', 'nombre', 'apellido', 'correo', 'contraseña', 'telefono'];
+    protected $allowedFields = ['tipo', 'nombre', 'apellido', 'correo', 'contraseña', 'telefono', 'estatus', 'session_token'];
 
     // Configuración de la base de datos
-    protected $useTimestamps = true;
+    protected $useTimestamps = false; // No hay campos de timestamp en tu esquema
 
     // Configuración de validación
     protected $validationRules = [
-        'correo'    => 'required|valid_email|is_unique[usuarios.correo]',
-        'contraseña' => 'required|min_length[6]',
+        'tipo'      => 'required|in_list[admin,operador]',
+        'nombre'    => 'required|max_length[50]',
+        'apellido'  => 'required|max_length[50]',
+        'contraseña' => 'required|min_length[8]|max_length[255]',
+        'telefono'  => 'permit_empty|max_length[15]',
+        'estatus' => 'permit_empty|in_list[0,1]',
+        'session_token'
     ];
-    
+
     // Método para obtener un usuario por su correo
     public function obtenerPorEmail($correo)
     {
@@ -41,7 +45,6 @@ class UsuariosModel extends Model
     // Método para registrar un nuevo usuario
     public function registrarUsuario($data)
     {
-        // Encriptar la contraseña antes de guardarla
         $data['contraseña'] = password_hash($data['contraseña'], PASSWORD_DEFAULT);
         return $this->save($data);
     }
