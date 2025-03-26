@@ -165,3 +165,59 @@ in SYSTEMPATH\BaseModel.php on line 1010.
  7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
  8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
  9 FCPATH\index.php(44): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-03-26 09:18:17 --> Excepción en create: "session_token" is not a valid rule. en línea 346
+ERROR - 2025-03-26 09:18:23 --> Excepción en create: "session_token" is not a valid rule. en línea 346
+ERROR - 2025-03-26 09:28:42 --> mysqli_sql_exception: Duplicate entry 'prueba4@gmail.com' for key 'correo' in C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `us...', 0)
+#1 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\xampp\htdocs\backendPlantify\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\backendPlantify\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\backendPlantify\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\backendPlantify\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\backendPlantify\app\Controllers\UsuariosController.php(102): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(933): App\Controllers\UsuariosController->create()
+#9 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuariosController))
+#10 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\backendPlantify\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\backendPlantify\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\backendPlantify\index.php(44): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+ERROR - 2025-03-26 09:28:42 --> Excepción en create: Duplicate entry 'prueba4@gmail.com' for key 'correo' en línea 692
+ERROR - 2025-03-26 09:28:53 --> mysqli_sql_exception: Duplicate entry 'prueba4@gmail.com' for key 'correo' in C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `us...', 0)
+#1 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\xampp\htdocs\backendPlantify\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\backendPlantify\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\backendPlantify\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\backendPlantify\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\backendPlantify\app\Controllers\UsuariosController.php(102): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(933): App\Controllers\UsuariosController->create()
+#9 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuariosController))
+#10 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\backendPlantify\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\backendPlantify\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\backendPlantify\index.php(44): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+ERROR - 2025-03-26 09:28:53 --> Excepción en create: Duplicate entry 'prueba4@gmail.com' for key 'correo' en línea 692
+ERROR - 2025-03-26 09:29:04 --> mysqli_sql_exception: Duplicate entry 'prueba4@gmail.com' for key 'correo' in C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\backendPlantify\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `us...', 0)
+#1 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\xampp\htdocs\backendPlantify\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\xampp\htdocs\backendPlantify\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\backendPlantify\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\backendPlantify\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\backendPlantify\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\backendPlantify\app\Controllers\UsuariosController.php(102): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(933): App\Controllers\UsuariosController->create()
+#9 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuariosController))
+#10 C:\xampp\htdocs\backendPlantify\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\backendPlantify\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\backendPlantify\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\backendPlantify\index.php(44): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+ERROR - 2025-03-26 09:29:04 --> Excepción en create: Duplicate entry 'prueba4@gmail.com' for key 'correo' en línea 692

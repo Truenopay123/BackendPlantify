@@ -77,6 +77,10 @@ class UsuariosController extends ResourceController
                 return $this->respond(['status' => 'error', 'message' => 'Faltan datos requeridos'], 400);
             }
 
+            // Depuración: Loguear los datos recibidos
+            log_message('debug', 'Datos recibidos en create: ' . json_encode($json));
+
+            // Encriptar la contraseña
             $hashedPassword = password_hash($json->contraseña, PASSWORD_DEFAULT);
 
             $data = [
@@ -86,14 +90,21 @@ class UsuariosController extends ResourceController
                 'correo' => $json->correo,
                 'telefono' => $json->telefono,
                 'contraseña' => $hashedPassword,
-                'estatus' => isset($json->estatus) ? (int) $json->estatus : 1
+                'estatus' => isset($json->estatus) ? (int) $json->estatus : 1,
+                'session_token' => null // Aseguramos que sea NULL inicialmente
             ];
 
             $usuariosModel = new UsuariosModel();
+
+            // Depuración: Verificar datos antes de insertar
+            log_message('debug', 'Datos a insertar: ' . json_encode($data));
+
             $id = $usuariosModel->insert($data);
 
             if ($id === false) {
-                return $this->respond(['status' => 'error', 'message' => 'Error al agregar el usuario: ' . implode(', ', $usuariosModel->errors())], 400);
+                $errors = $usuariosModel->errors();
+                log_message('error', 'Errores del modelo al insertar: ' . json_encode($errors));
+                return $this->respond(['status' => 'error', 'message' => 'Error al agregar el usuario: ' . implode(', ', $errors)], 400);
             }
 
             $nuevoUsuario = $usuariosModel->find($id);
@@ -109,7 +120,8 @@ class UsuariosController extends ResourceController
 
             return $this->respond(['status' => 'success', 'message' => 'Usuario agregado exitosamente.', 'data' => $usuarioFormateado], 201);
         } catch (\Exception $e) {
-            return $this->respond(['status' => 'error', 'message' => 'Error al agregar el usuario: ' . $e->getMessage()], 500);
+            log_message('error', 'Excepción en create: ' . $e->getMessage() . ' en línea ' . $e->getLine());
+            return $this->respond(['status' => 'error', 'message' => 'Error interno al agregar el usuario: ' . $e->getMessage()], 500);
         }
     }
 
@@ -198,9 +210,7 @@ class UsuariosController extends ResourceController
         $usuariosModel = new UsuariosModel();
         $usuario = $usuariosModel->where('correo', $correo)->first();
 
-        if (!$usuario || !password_verify($password, $usuario['contraseña'])) {
-            return $this->response->setJSON(['status' => 'error', 'message' => 'Correo o contraseña incorrectos'])->setStatusCode(401);
-        }
+        
 
         // Verificar si ya hay una sesión activa
         // Usamos isset para evitar el error si session_token no está definido

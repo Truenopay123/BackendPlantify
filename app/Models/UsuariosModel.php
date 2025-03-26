@@ -22,8 +22,7 @@ class UsuariosModel extends Model
         'apellido'  => 'required|max_length[50]',
         'contraseña' => 'required|min_length[8]|max_length[255]',
         'telefono'  => 'permit_empty|max_length[15]',
-        'estatus' => 'permit_empty|in_list[0,1]',
-        'session_token'
+        'estatus' => 'permit_empty|in_list[0,1]'
     ];
 
     // Método para obtener un usuario por su correo
