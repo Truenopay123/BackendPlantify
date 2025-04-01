@@ -27,6 +27,7 @@ class Database extends Config
     public array $default = [
         'DSN'          => '',
         
+        
         'hostname'     => 'jamadev.com',
         'username'     => 'admin',
         'password'     => 'x2o5?88Wx',
@@ -38,6 +39,7 @@ class Database extends Config
         'password'     => 'Perfect97',
         'database'     => 'admin_plantify',
         */
+
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
         'pConnect'     => false,

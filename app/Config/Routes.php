@@ -15,13 +15,20 @@ $routes->options('(:any)', 'UsuariosController::options');
 
 // Rutas para autenticación (UsuariosController)
 $routes->post('/login', 'UsuariosController::procesarLogin'); // Iniciar sesión
-$routes->post('/logout', 'UsuariosController::logout');       // Cerrar sesión (cambiamos a POST por seguridad)
+$routes->post('/logout', 'UsuariosController::logout');      // Cerrar sesión
 
 // Rutas para gestión de usuarios (UsuariosController)
-$routes->get('/usuarios', 'UsuariosController::index');       // Obtener todos los usuarios
-$routes->post('/usuarios', 'UsuariosController::create');     // Crear un nuevo usuario
+$routes->get('/usuarios', 'UsuariosController::index');      // Obtener todos los usuarios
+$routes->post('/usuarios', 'UsuariosController::create');    // Crear un nuevo usuario
 $routes->put('/usuarios/(:num)', 'UsuariosController::update/$1'); // Actualizar usuario por ID
+$routes->get('/operadores', 'UsuariosController::operadores'); // Obtener todos los usuarios operadores
 
 // Rutas para sensores (SensoresController)
 $routes->post('/sensores/guardar', 'SensoresController::guardar'); // Guardar datos de sensores
 $routes->get('/sensores/historial', 'SensoresController::historial'); // Obtener historial de sensores
+$routes->get('/sensores/reporte', 'SensoresController::reporte');
+
+// Rutas para notificaciones
+$routes->post('/notificaciones', 'UsuariosController::notificaciones'); // Guardar notificaciones desde Firebase
+$routes->get('/notificaciones/historial', 'NotificacionesController::historial'); // Obtener historial de notificaciones
+$routes->get('/notificaciones/reporte', 'NotificacionesController::reporte'); // Obtener reporte

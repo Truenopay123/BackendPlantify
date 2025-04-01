@@ -210,7 +210,7 @@ class UsuariosController extends ResourceController
         $usuariosModel = new UsuariosModel();
         $usuario = $usuariosModel->where('correo', $correo)->first();
 
-        
+
 
         // Verificar si ya hay una sesión activa
         // Usamos isset para evitar el error si session_token no está definido
@@ -252,8 +252,8 @@ class UsuariosController extends ResourceController
 
         $usuariosModel = new UsuariosModel();
         $usuario = $usuariosModel->where('id_usuario', $id_usuario)
-                                 ->where('session_token', $session_token)
-                                 ->first();
+            ->where('session_token', $session_token)
+            ->first();
 
         if (!$usuario) {
             return $this->response->setJSON(['status' => 'error', 'message' => 'Sesión inválida'])->setStatusCode(401);
@@ -263,4 +263,38 @@ class UsuariosController extends ResourceController
         $usuariosModel->update($id_usuario, ['session_token' => null]);
         return $this->response->setJSON(['status' => 'success', 'message' => 'Sesión cerrada exitosamente']);
     }
+
+    //
+
+    public function operadores()
+    {
+        $operadores = $this->model->where('tipo', 'operador')
+            ->where('estatus', 1)
+            ->findAll();
+        return $this->respond($operadores);
+    }
+
+    public function notificaciones()
+    {
+        date_default_timezone_set('America/Mexico_City');
+
+        $json = $this->request->getJSON();
+        if (!$json || !isset($json->notificacion)) {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Faltan datos'])->setStatusCode(400);
+        }
+
+        $dataNotificacion = [
+            'notificacion' => $json->notificacion,
+            'fecha' => isset($json->fecha) ? date('Y-m-d H:i:s', strtotime($json->fecha)) : date('Y-m-d H:i:s'),
+        ];
+
+        try {
+            $notificacionesModel = new \App\Models\NotificacionesModel();
+            $notificacionesModel->insert($dataNotificacion);
+            return $this->response->setJSON(['status' => 'success', 'message' => 'Notificación guardada correctamente']);
+        } catch (\Exception $e) {
+            return $this->response->setJSON(['status' => 'error', 'message' => $e->getMessage()])->setStatusCode(500);
+        }
+    }
+
 }

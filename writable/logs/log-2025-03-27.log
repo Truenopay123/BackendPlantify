@@ -1,0 +1,10 @@
+CRITICAL - 2025-03-27 18:47:18 --> ErrorException: Trying to access array offset on value of type null
+[Method: POST, Route: login]
+in APPPATH\Controllers\UsuariosController.php on line 226.
+ 1 APPPATH\Controllers\UsuariosController.php(226): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\backendPlantify\\app\\Controllers\\UsuariosController.php', 226)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UsuariosController->procesarLogin()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuariosController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(44): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
