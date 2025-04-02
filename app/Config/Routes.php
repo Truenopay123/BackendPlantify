@@ -20,7 +20,7 @@ $routes->post('/logout', 'UsuariosController::logout');      // Cerrar sesión
 // Rutas para gestión de usuarios (UsuariosController)
 $routes->get('/usuarios', 'UsuariosController::index');      // Obtener todos los usuarios
 $routes->post('/usuarios', 'UsuariosController::create');    // Crear un nuevo usuario
-$routes->put('/usuarios/(:num)', 'UsuariosController::update/$1'); // Actualizar usuario por ID
+$routes->post('/usuarios/update', 'UsuariosController::updatePost');
 $routes->get('/operadores', 'UsuariosController::operadores'); // Obtener todos los usuarios operadores
 
 // Rutas para sensores (SensoresController)

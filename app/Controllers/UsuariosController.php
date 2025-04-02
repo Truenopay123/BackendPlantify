@@ -125,18 +125,19 @@ class UsuariosController extends ResourceController
         }
     }
 
-    // Modificar un usuario existente (PUT /usuarios/{id})
-    public function update($id = null)
+    public function updatePost()
     {
         try {
-            if ($id === null) {
+            $json = $this->request->getJSON();
+            if (!$json || !isset($json->id_usuario)) {
                 return $this->respond([
                     'status' => 'error',
                     'message' => 'ID de usuario no proporcionado'
                 ], 400);
             }
 
-            $json = $this->request->getJSON();
+            $id = $json->id_usuario;
+
             if (!$json || !isset($json->nombre) || !isset($json->apellido) || !isset($json->correo) || !isset($json->telefono)) {
                 return $this->respond([
                     'status' => 'error',
@@ -204,16 +205,28 @@ class UsuariosController extends ResourceController
             return $this->response->setJSON(['status' => 'error', 'message' => 'Faltan datos'])->setStatusCode(400);
         }
 
-        $correo = $json->correo;
+        $correo = filter_var($json->correo, FILTER_VALIDATE_EMAIL);
+        if ($correo === false) {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Correo inválido'])->setStatusCode(400);
+        }
+
         $password = $json->password;
+        if (strlen($password) < 8) {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Contraseña demasiado corta'])->setStatusCode(400);
+        }
 
         $usuariosModel = new UsuariosModel();
         $usuario = $usuariosModel->where('correo', $correo)->first();
 
-
+        // Si no se encuentra el usuario o la contraseña es incorrecta
+        if (!$usuario || !password_verify($password, $usuario['contraseña'])) {
+            return $this->response->setJSON([
+                'status' => 'error',
+                'message' => 'Credenciales incorrectas'
+            ])->setStatusCode(401);
+        }
 
         // Verificar si ya hay una sesión activa
-        // Usamos isset para evitar el error si session_token no está definido
         if (isset($usuario['session_token']) && $usuario['session_token'] !== null) {
             return $this->response->setJSON([
                 'status' => 'error',
@@ -221,11 +234,10 @@ class UsuariosController extends ResourceController
             ])->setStatusCode(403);
         }
 
-        // Generar un token único para la sesión
-        $sessionToken = bin2hex(random_bytes(16)); // Token de 32 caracteres
+        // Generar token de sesión
+        $sessionToken = bin2hex(random_bytes(16));
         $usuariosModel->update($usuario['id_usuario'], ['session_token' => $sessionToken]);
 
-        // Devolver datos del usuario con el token
         return $this->response->setJSON([
             'status' => 'success',
             'message' => 'Inicio de sesión exitoso',
@@ -236,7 +248,7 @@ class UsuariosController extends ResourceController
                 'tipo' => $usuario['tipo'] === 'admin' ? 1 : 0,
                 'session_token' => $sessionToken
             ]
-        ]);
+        ])->setStatusCode(200);
     }
 
     // Cerrar sesión (POST /logout)
