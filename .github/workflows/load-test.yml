@@ -3,14 +3,11 @@ name: K6 Load Testing
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
-  workflow_dispatch:  # permite ejecutarlo manualmente
+  workflow_dispatch:
 
 jobs:
   k6-load-test:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout código
         uses: actions/checkout@v3
@@ -30,6 +27,6 @@ jobs:
 
       - name: Ejecutar pruebas K6
         env:
-          GRAFANA_TOKEN: ${{ secrets.GRAFANA_TOKEN }}
+          K6_CLOUD_TOKEN: ${{ secrets.GRAFANA_TOKEN }}
         run: |
-          k6 run --out cloud load-test.js
+          k6 run --out cloud tests/load-test.js
