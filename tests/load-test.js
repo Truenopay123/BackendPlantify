@@ -26,7 +26,7 @@ export default function () {
   const res2 = http.post(
     'https://plantify.jamadev.com/index.php/login',
     JSON.stringify({
-      email: 'bryan@gmail.com',
+      correo: 'bryan@gmail.com',
       password: 'Hola.123',
     }),
     { headers: { 'Content-Type': 'application/json' } }
